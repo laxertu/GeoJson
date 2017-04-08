@@ -1,0 +1,7 @@
+<phpunit bootstrap="boot.php">
+    <testsuites>
+        <testsuite name="geometry">
+            <directory>Geometry</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
