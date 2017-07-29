@@ -1,6 +1,7 @@
 <?php
 namespace laxertu\GeoJSON\Feature;
 
+use laxertu\DataTree\DataTree;
 use laxertu\GeoJSON\GeoJSONObject;
 use laxertu\DataTree\OpenDataTree;
 use laxertu\DataTree\Processor\ProcessableInterface;
@@ -54,13 +55,12 @@ class Feature extends GeoJSONObject
 
     public function setProperties(ProcessableInterface $properties)
     {
-        $propertiesTree = new OpenDataTree('properties');
-        $propertiesTree->setChild($properties, 0);
-        $this->dataTree->setChild($propertiesTree, 1);
+        $propertiesTree = new DataTree('properties');
+        $propertiesTree->setChildTree($properties);
     }
 
     /**
-     * @return \laxertu\DataTree\OpenDataTree
+     * @return \laxertu\DataTree\DataTree
      */
     public function getProperties()
     {

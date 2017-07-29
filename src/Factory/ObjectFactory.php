@@ -34,12 +34,11 @@ class ObjectFactory
     }
 
 
-    private function fillOneDimensionalGeometry(AbstractOneDimensionalGeometry $geometry, array $positionsCoordinatesList)
+    private function fillOneDimensionalGeometry(AbstractOneDimensionalGeometry $geometry, array $positionsCoordsList)
     {
         /**@var Position $position */
-        foreach($positionsCoordinatesList as $positionCoordinates)
-        {
-            try{
+        foreach ($positionsCoordsList as $positionCoordinates) {
+            try {
                 $position = $this->createPosition($positionCoordinates);
                 $geometry->addPosition($position);
             } catch (\InvalidArgumentException $e) {

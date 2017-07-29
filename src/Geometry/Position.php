@@ -6,6 +6,7 @@ namespace laxertu\GeoJSON\Geometry;
  * Class Position
  * @package DataTree\examples\GeoJSON
  * @see DataTree\tests\examples\PositionTest
+ * @link http://geojson.org/geojson-spec.html#positions
  */
 class Position extends AbstractGeometry
 {
