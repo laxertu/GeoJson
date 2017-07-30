@@ -11,8 +11,6 @@ class MultiPoint extends AbstractGeometry
 {
 
     protected $type = 'MultiPoint';
-    protected $isAList = true;
-
 
     public function setCoordinates(array $coordinatesList)
     {
