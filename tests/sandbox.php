@@ -1,7 +1,9 @@
 <?php
 namespace laxertu\GeoJSON\tests;
 
-use laxertu\GeoJSON\Geometry\Point;
+use laxertu\DataTree\Processor\JsonFormatter;
+use laxertu\GeoJSON\Model\Geometry\Point;
+use laxertu\GeoJSON\Model\Position;
 
 error_reporting(E_ALL);
 
@@ -10,8 +12,13 @@ require_once 'print_utils.php';
 
 #------------------------------------------------------
 
-$p = new Point();
-$p->setCoordinates(1, 2);
-print_r($p);
+$pos = new Position([1,2]);
 
-oJson($p->getContent());
+
+$p = new Point('MyPoint');
+
+$p->setCoordinates($pos);
+
+$f = new JsonFormatter();
+oJson($f->buildContent($p));
+

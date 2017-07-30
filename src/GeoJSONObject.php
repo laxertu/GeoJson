@@ -1,6 +1,7 @@
 <?php
 namespace laxertu\GeoJSON;
 use laxertu\DataTree\DataTreeBase;
+use laxertu\DataTree\DataTreeElement;
 
 
 /**
@@ -19,14 +20,15 @@ abstract class GeoJSONObject extends DataTreeBase
      */
     protected $type;
 
-    private $bbox = [];
-    private $foreignMembers = [];
+    //private $bbox = [];
+    //private $foreignMembers = [];
 
-    final public function __construct($type)
+    final public function __construct()
     {
-        $this->type = $type;
+        /**
+         * @see https://github.com/laxertu/DataTreeComposite/issues/1
+         */
+        $this->setName($this->type);
+        $this->setChild(new DataTreeElement('type', $this->type), 0);
     }
-
-
-
 }

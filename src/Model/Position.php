@@ -1,15 +1,20 @@
 <?php
 namespace laxertu\GeoJSON\Model;
 
-class Position
-{
+use laxertu\DataTree\DataTreeBase;
 
-    private $coordinates = [];
+/**
+ * Class Position
+ * @package laxertu\GeoJSON\Model
+ * @see laxertu\GeoJSON\tests\PositionTest
+ */
+class Position extends DataTreeBase
+{
 
     final public function setCoordinates(array $coordinates)
     {
         $this->validateCoordinates($coordinates);
-        $this->coordinates = $coordinates;
+        $this->setValue($coordinates);
     }
 
 
