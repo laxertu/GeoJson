@@ -3,7 +3,7 @@ namespace laxertu\GeoJSON\tests\Geometry;
 
 use laxertu\GeoJSON\Model\Geometry\LineString;
 
-class MultiPointTest extends \PHPUnit_Framework_TestCase
+class LineStringPointTest extends \PHPUnit_Framework_TestCase
 {
     /** @var  LineString */
     private $sut;
