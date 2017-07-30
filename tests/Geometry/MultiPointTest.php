@@ -1,5 +1,5 @@
 <?php
-namespace laxertu\GeoJSON\tests;
+namespace laxertu\GeoJSON\tests\Geometry;
 
 
 use laxertu\GeoJSON\Model\Geometry\MultiPoint;
