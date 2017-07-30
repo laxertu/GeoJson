@@ -12,19 +12,14 @@ use laxertu\DataTree\DataTreeElement;
  */
 abstract class GeoJSONObject extends DataTreeBase
 {
-    /**
-     * @var String Type of Object
-     *
-     * "Point", "MultiPoint", "LineString","MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection"
-     *
-     */
-    protected $type;
 
     //private $bbox = [];
     //private $foreignMembers = [];
 
     final public function __construct()
     {
-        $this->setChild(new DataTreeElement('type', $this->type), 0);
+        $this->setChild(new DataTreeElement('type', $this->getType()), 0);
     }
+
+    abstract protected function getType();
 }

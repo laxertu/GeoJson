@@ -19,4 +19,10 @@ class LineString extends AbstractGeometry
         }
     }
 
+    protected function getType()
+    {
+        return 'LineString';
+    }
+
+
 }

@@ -16,4 +16,9 @@ class Point extends AbstractGeometry
         $this->setChild(new DataTreeElement('coordinates', $coordinates), 1);
     }
 
+    protected function getType()
+    {
+        return 'Point';
+    }
+
 }

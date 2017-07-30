@@ -16,4 +16,10 @@ class MultiPoint extends AbstractGeometry
             $this->setChild(new DataTreeElement('coordinates', $coordinatesList), 1);
         }
     }
+
+    protected function getType()
+    {
+        return 'MultiPoint';
+    }
+
 }
