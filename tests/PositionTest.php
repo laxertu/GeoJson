@@ -1,10 +1,10 @@
 <?php
-namespace DataTree\tests\examples;
-
-use laxertu\GeoJSON\Geometry\Position;
+namespace laxertu\GeoJSON\tests;
+use laxertu\GeoJSON\Model\Position;
 
 class PositionTest extends \PHPUnit_Framework_TestCase
 {
+
 
     public function testNoArguments()
     {
@@ -33,5 +33,8 @@ class PositionTest extends \PHPUnit_Framework_TestCase
         $sut = new Position();
         $sut->setCoordinates([1, 2]);
 
+        $sut = new Position();
+        $sut->setCoordinates([1.1111, 2.22222, 3.33333]);
     }
+
 }

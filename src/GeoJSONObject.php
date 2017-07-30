@@ -1,56 +1,32 @@
 <?php
 namespace laxertu\GeoJSON;
-
-use laxertu\DataTree\DataTree;
-use laxertu\DataTree\DataTreeElement;
-use laxertu\DataTree\Processor\JsonFormatter;
+use laxertu\DataTree\DataTreeBase;
 
 
 /**
  * Class GeoJSONObject
  * @package DataTree\examples\GeoJSON
- * @link http://geojson.org/geojson-spec.html
+ * @link https://tools.ietf.org/pdf/rfc7946.pdf
  *
  */
-abstract class GeoJSONObject
+abstract class GeoJSONObject extends DataTreeBase
 {
-    /** @var  JsonFormatterInterface */
-    private $formatter;
-
-    /** @var String Type of Object, 'Point', 'LineString', etc */
+    /**
+     * @var String Type of Object
+     *
+     * "Point", "MultiPoint", "LineString","MultiLineString", "Polygon", "MultiPolygon", "GeometryCollection"
+     *
+     */
     protected $type;
 
-    /** @var  DataTree */
-    protected $dataTree;
+    private $bbox = [];
+    private $foreignMembers = [];
 
-    public final function __construct($name = 'GeoJsonObject')
+    final public function __construct($type)
     {
-        $this->dataTree = new DataTree($name);
-        $this->dataTree->setChildTree(new DataTreeElement('type', $this->type));
+        $this->type = $type;
     }
 
 
-    protected function getFormatter()
-    {
-        if (!$this->formatter) {
-            $this->formatter = new JsonFormatter();
-        }
-
-        return $this->formatter;
-    }
-
-    public final function setFormatter(JsonFormatterInterface $jsonFormatterInterface)
-    {
-        $this->formatter = $jsonFormatterInterface;
-    }
-
-    abstract protected function prepare();
-
-
-    public final function getContent()
-    {
-        $this->prepare();
-        return $this->getFormatter()->buildContent($this->dataTree);
-    }
 
 }
