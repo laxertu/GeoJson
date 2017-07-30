@@ -15,7 +15,8 @@ class Point extends AbstractGeometry
 
     public function setCoordinates(array $coordinates)
     {
-        $position = new Position($coordinates);
+        $position = new Position();
+        $position->setCoordinates($coordinates);
         $this->setChild(new DataTreeElement('coordinates', $position->getValue()), 1);
     }
 
