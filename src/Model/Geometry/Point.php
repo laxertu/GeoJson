@@ -6,7 +6,7 @@ use laxertu\GeoJSON\helper\CoordinatesValidator;
 
 /**
  * @package laxertu\GeoJSON\Model\Geometry
- * @see \laxertu\GeoJSON\tests\PointTest
+ * @see \laxertu\GeoJSON\tests\Geometry\PointTest
  */
 class Point extends AbstractGeometry
 {
