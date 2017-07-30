@@ -1,5 +1,5 @@
 <?php
-namespace laxertu\GeoJSON;
+namespace laxertu\GeoJSON\Model;
 use laxertu\DataTree\DataTreeBase;
 use laxertu\DataTree\DataTreeElement;
 
