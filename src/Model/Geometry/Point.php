@@ -2,7 +2,7 @@
 namespace laxertu\GeoJSON\Model\Geometry;
 
 use laxertu\DataTree\DataTreeElement;
-use laxertu\GeoJSON\Model\Position;
+use laxertu\GeoJSON\helper\CoordinatesValidator;
 
 /**
  * @package laxertu\GeoJSON\Model\Geometry
@@ -15,9 +15,8 @@ class Point extends AbstractGeometry
 
     public function setCoordinates(array $coordinates)
     {
-        $position = new Position();
-        $position->setCoordinates($coordinates);
-        $this->setChild(new DataTreeElement('coordinates', $position->getValue()), 1);
+        CoordinatesValidator::validateCoordinates($coordinates);
+        $this->setChild(new DataTreeElement('coordinates', $coordinates), 1);
     }
 
 }
