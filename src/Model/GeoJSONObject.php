@@ -25,10 +25,6 @@ abstract class GeoJSONObject extends DataTreeBase
 
     final public function __construct()
     {
-        /**
-         * @see https://github.com/laxertu/DataTreeComposite/issues/1
-         */
-        $this->setName($this->type);
         $this->setChild(new DataTreeElement('type', $this->type), 0);
     }
 }

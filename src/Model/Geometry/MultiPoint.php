@@ -9,9 +9,6 @@ use laxertu\GeoJSON\helper\CoordinatesValidator;
  */
 class MultiPoint extends AbstractGeometry
 {
-
-    protected $type = 'MultiPoint';
-
     public function setCoordinates(array $coordinatesList)
     {
         foreach ($coordinatesList as $coordinates) {

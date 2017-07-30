@@ -10,9 +10,6 @@ use laxertu\GeoJSON\helper\CoordinatesValidator;
  */
 class Point extends AbstractGeometry
 {
-
-    protected $type = 'Point';
-
     public function setCoordinates(array $coordinates)
     {
         CoordinatesValidator::validateCoordinates($coordinates);

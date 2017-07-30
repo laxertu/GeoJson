@@ -6,8 +6,5 @@ use laxertu\GeoJSON\Model\GeoJSONObject;
 
 abstract class AbstractGeometry extends GeoJSONObject
 {
-
-    protected $type = 'Geometry';
     protected $coordinates;
-
 }

@@ -6,8 +6,6 @@ use laxertu\DataTree\DataTreeElement;
 
 class LineString extends AbstractGeometry
 {
-    protected $type = 'LineString';
-
     public function setCoordinates(array $coordinatesList)
     {
 
