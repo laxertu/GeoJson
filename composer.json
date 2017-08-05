@@ -2,7 +2,7 @@
     "name": "laxertu/geo-json",
     "type": "library",
     "description": "An implementation of GeoJSON objects",
-    "keywords": ["GeoJson","Maps","Structured data","Geography"],
+    "keywords": ["PHP", "GeoJson","Maps","Structured data","Geography"],
     "homepage": "https://github.com/laxertu/GeoJson",
     "license": "MIT",
     "authors": [
