@@ -11,6 +11,7 @@ class MultiLineStringTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->sut = new MultiLineString();
+        $this->sut->setName('Sut');
     }
 
     public function testSetEmptyCoordinatesError()

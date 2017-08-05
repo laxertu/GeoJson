@@ -12,6 +12,7 @@ class PointTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->sut = new Point();
+        $this->sut->setName('Sut');
     }
 
     public function testNoArguments()
