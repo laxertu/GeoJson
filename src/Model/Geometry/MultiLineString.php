@@ -17,19 +17,11 @@ class MultiLineString extends AbstractGeometry
             throw new \InvalidArgumentException('Empty coordinates list');
         }
 
-        $backup = $this->getCoordinates();
-
-        try {
-            foreach ($coordinatesList as $coordinates) {
-                CoordinatesValidator::validateLineStringCoordinates($coordinates);
-            }
-
-            $this->updateCoordinatesNode($coordinatesList);
-
-        } catch (\InvalidArgumentException $e) {
-            $this->updateCoordinatesNode($backup);
-            throw $e;
+        foreach ($coordinatesList as $coordinates) {
+            CoordinatesValidator::validateLineStringCoordinates($coordinates);
         }
+
+        $this->updateCoordinatesNode($coordinatesList);
     }
 
     protected function getType()
