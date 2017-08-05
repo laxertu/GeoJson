@@ -2,7 +2,7 @@
 namespace laxertu\GeoJSON\Model\Geometry;
 
 use laxertu\DataTree\DataTreeElement;
-use laxertu\GeoJSON\helper\CoordinatesValidator;
+use laxertu\GeoJSON\Helper\CoordinatesValidator;
 
 /**
  * @package laxertu\GeoJSON\Model\Geometry

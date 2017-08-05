@@ -1,7 +1,7 @@
 <?php
 namespace laxertu\GeoJSON\Model\Geometry;
 
-use laxertu\GeoJSON\helper\CoordinatesValidator;
+use laxertu\GeoJSON\Helper\CoordinatesValidator;
 use laxertu\DataTree\DataTreeElement;
 
 class LineString extends AbstractGeometry

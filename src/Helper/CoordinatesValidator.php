@@ -1,9 +1,8 @@
 <?php
-namespace laxertu\GeoJSON\helper;
+namespace laxertu\GeoJSON\Helper;
 
 
-class CoordinatesValidator
-{
+class CoordinatesValidator {
 
     public static function validateCoordinates($coordinates)
     {
