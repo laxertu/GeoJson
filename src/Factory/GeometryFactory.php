@@ -33,6 +33,8 @@ class GeometryFactory
         $obj = new MultiPoint();
         $obj->setName($name);
         $obj->setCoordinates($coordinates);
+
+        return $obj;
     }
 
     public function createMultiLineString($name, $coordinates)
@@ -40,6 +42,8 @@ class GeometryFactory
         $obj = new MultiLineString();
         $obj->setName($name);
         $obj->setCoordinates($coordinates);
+
+        return $obj;
     }
 
 }
