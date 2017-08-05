@@ -15,8 +15,8 @@ class LineString extends AbstractGeometry
 
         foreach ($coordinatesList as $coordinates) {
             CoordinatesValidator::validateCoordinates($coordinates);
-            $this->setChild(new DataTreeElement('coordinates', $coordinatesList), 1);
         }
+        $this->setChild(new DataTreeElement('coordinates', $coordinatesList), 1);
     }
 
     protected function getType()
