@@ -1,6 +1,6 @@
 <?php
 namespace laxertu\GeoJSON\Model\Geometry;
-use laxertu\DataTree\DataTreeElement;
+
 use laxertu\GeoJSON\Helper\CoordinatesValidator;
 
 /**
@@ -14,7 +14,7 @@ class MultiPoint extends AbstractGeometry
         foreach ($coordinatesList as $coordinates) {
             CoordinatesValidator::validateCoordinates($coordinates);
         }
-        $this->setChild(new DataTreeElement('coordinates', $coordinatesList), 1);
+        $this->updateCoordinatesNode($coordinatesList);
     }
 
     protected function getType()

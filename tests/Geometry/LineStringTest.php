@@ -22,12 +22,12 @@ class LineStringPointTest extends \PHPUnit_Framework_TestCase
     public function testSetCoordinates()
     {
         $this->sut->setCoordinates([[1,2,3], [4,5,6]]);
-        $this->assertSame([[1,2,3], [4,5,6]], $this->sut->getChildren()[1]->getValue());
+        $this->assertSame([[1,2,3], [4,5,6]], $this->sut->getCoordinates());
 
         try {
             $this->sut->setCoordinates([]);
         } catch (\InvalidArgumentException $e) {
-            $this->assertSame([[1,2,3], [4,5,6]], $this->sut->getChildren()[1]->getValue());
+            $this->assertSame([[1,2,3], [4,5,6]], $this->sut->getCoordinates());
         }
 
         try {
@@ -35,7 +35,7 @@ class LineStringPointTest extends \PHPUnit_Framework_TestCase
         } catch (\InvalidArgumentException $e) {
         }
 
-        $this->assertSame([[1,2,3], [4,5,6]], $this->sut->getChildren()[1]->getValue());
+        $this->assertSame([[1,2,3], [4,5,6]], $this->sut->getCoordinates());
 
     }
 

@@ -35,9 +35,9 @@ class PointTest extends \PHPUnit_Framework_TestCase
     public function testOk()
     {
         $this->sut->setCoordinates([1, 2]);
-        $this->assertSame([1,2], $this->sut->getChildren()[1]->getValue());
+        $this->assertSame([1,2], $this->sut->getCoordinates());
         $this->sut->setCoordinates([1.1111, 2.22222, 3.33333]);
-        $this->assertSame([1.1111, 2.22222, 3.33333], $this->sut->getChildren()[1]->getValue());
+        $this->assertSame([1.1111, 2.22222, 3.33333], $this->sut->getCoordinates());
     }
 
     public function testSetter()
@@ -48,6 +48,6 @@ class PointTest extends \PHPUnit_Framework_TestCase
         } catch (\InvalidArgumentException $e) {
 
         }
-        $this->assertSame([1,2], $this->sut->getChildren()[1]->getValue());
+        $this->assertSame([1,2], $this->sut->getCoordinates());
     }
 }

@@ -25,4 +25,21 @@ class CoordinatesValidator {
             }
         }
     }
+
+    public static function validateLineStringCoordinates($coordinatesList)
+    {
+
+        if (!is_array($coordinatesList)) {
+            throw new \InvalidArgumentException('Array expected');
+        }
+
+        if (count($coordinatesList) < 2) {
+            throw new \InvalidArgumentException('LineString coordinates have to be at leat 2');
+        }
+
+        foreach ($coordinatesList as $coordinates) {
+            CoordinatesValidator::validateCoordinates($coordinates);
+        }
+
+    }
 }
